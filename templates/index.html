@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikkei 225 Real-time Analysis Dashboard</title>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- External JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>日経225 リアルタイム分析ダッシュボード</h1>
+            <p>Nikkei 225 Real-time Contribution Analysis</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Control Panel -->
+        <div class="controls">
+            <button id="analyzeBtn" class="btn-primary">Run Analysis</button>
+            <button id="refreshBtn" class="btn-secondary">Refresh Data</button>
+            <span id="status">初期化中...</span>
+        </div>
+
+
+        <!-- Industry Contributions Chart -->
+        <div class="chart-container">
+            <h2>業種別寄与度</h2>
+            <div class="chart-wrapper">
+                <canvas id="industryChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Individual Stock Contributions Chart -->
+        <div class="chart-container">
+            <h2>個別銘柄寄与度 (上位10・下位10)</h2>
+            <div class="chart-wrapper">
+                <canvas id="stockChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Market Cap Top 20 Price Changes Chart -->
+        <div class="chart-container">
+            <h2>時価総額上位20銘柄 前日比変動率</h2>
+            <div class="chart-wrapper" style="height: 600px;">
+                <canvas id="marketCapChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/js/charts.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
